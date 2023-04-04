@@ -1,4 +1,4 @@
-## Letter Recognition in Archaeology Writing using Deep Learning
+# Letter Recognition in Archaeology Writing using Deep Learning
 
 This project aims to solve the problem of letter recognition in Archaeology writing using deep learning techniques. We will be using a self-supervised approach to achieve multi-class classification.
 
@@ -17,7 +17,7 @@ Pandas
 ## Usage
 To use the script, simply instantiate a DatabaseFactory object with the path to the folder containing the images and annotations. 
 
-# For example:
+## Example:
 python
 Copy code
 from database_factory import DatabaseFactory
