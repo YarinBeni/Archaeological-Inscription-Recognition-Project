@@ -1,29 +1,32 @@
-Letter Recognition in Archaeology Writing using Deep Learning
+## Letter Recognition in Archaeology Writing using Deep Learning
+
 This project aims to solve the problem of letter recognition in Archaeology writing using deep learning techniques. We will be using a self-supervised approach to achieve multi-class classification.
 
-Dataset Creation
+## Dataset Creation
 We have created a DatabaseFactory class that will create a dataset from unorganized data folders. The data folders contain images of Archaeology writing in a structure of areas where they were found. Each image folder contains a PNG image along with a JSON file that contains relevant polygon annotation data for letters inside the image.
 
+
+## Image Database Factory
 Our code will crop and save the letter images in a sample folder in each image folder. It will also create a CSV file with relevant information about the cropped image and add relevant information on the original image to a separate CSV file.
 
-Image Database Factory
-This is a Python script for creating an image database. The script takes a folder containing images and JSON annotation files as input and outputs two CSV files containing information about the image samples and the original images, respectively.
-
-Requirements
+## Requirements
 Python 3
 OpenCV
 Pandas
-Usage
-To use the script, simply instantiate a DatabaseFactory object with the path to the folder containing the images and annotations. For example:
 
+## Usage
+To use the script, simply instantiate a DatabaseFactory object with the path to the folder containing the images and annotations. 
+
+# For example:
 python
 Copy code
 from database_factory import DatabaseFactory
-
 factory = DatabaseFactory("path/to/folder")
-The script will automatically parse the JSON annotation files and extract information about the image samples. It will then save the information to two CSV files: samples_database.csv and original_images_database.csv.
 
-Functionality
+The script will automatically parse the JSON annotation files and extract information about the image samples. It will then save the information to two CSV files: 
+samples_database.csv and original_images_database.csv.
+
+## Functionality
 The DatabaseFactory class has the following methods:
 
 __init__(self, data_path)
