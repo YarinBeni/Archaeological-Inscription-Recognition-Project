@@ -48,4 +48,4 @@ Special thanks to Dr. Barak Sober from The Hebrew University of Jerusalem's Depa
 
 ## Acknowledgements
 Our project is heavily inspired by the work of Mathilde Caron et al. on Self-Supervised Vision Transformers (https://arxiv.org/abs/2104.14294).
-For more information on their work, please visit the DINO GitHub repository.
+For more information on their work, please visit the DINO GitHub repository(https://github.com/facebookresearch/dino).
