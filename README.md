@@ -1,58 +1,66 @@
-# Letter Recognition in Archaeology Writing using Deep Learning
+# Archaeological Inscription Recognition Project
 
-This project aims to solve the problem of letter recognition in Archaeology writing using deep learning techniques. We will be using a self-supervised approach to achieve multi-class classification.
+## Project Overview
 
-## Dataset Creation
-We have created a DatabaseFactory class that will create a dataset from unorganized data folders. The data folders contain images of Archaeology writing in a structure of areas where they were found. Each image folder contains a PNG image along with a JSON file that contains relevant polygon annotation data for letters inside the image.
+Creating good datasets for deep learning tasks is tough, especially when it takes a lot of time and money. In archaeology, it's even more difficult because you need experts who understand the ancient writing to label the data, which often has lots of imperfections. Our project aims to make this easier, which could be a big help for archaeology research.
 
+We're trying to solve this by focusing on recognizing individual letters on artifacts using a self-supervised approach – specifically a technique developed by FAIR called DINO. This approach tries to identify and pull out the letters automatically.
 
-## Image Database Factory
-Our code will crop and save the letter images in a sample folder in each image folder. It will also create a CSV file with relevant information about the cropped image and add relevant information on the original image to a separate CSV file.
+In this repository, you'll find a notebook that shows our early attempts to solve this complex issue. We hope it will motivate and help others who are working on similar problems.
 
-## Requirements
-Python 3
-OpenCV
-Pandas
+## Liberis
+To run this notebook, you'll need to install several libraries. You can install these via pip or conda, depending on your setup. Here's a list of the required libraries:
+- OpenCV (cv2): For image processing tasks.
+- pandas: For handling data and saving it in CSV format.
+- numpy: For numerical operations on arrays and matrices.
+- os: For interacting with the file system.
+- json: For parsing JSON files that contain annotations.
+- pytorch_lightning: For organizing the deep learning workflow, making it more structured and providing high-level components for training.
+- torch: PyTorch, for building and training neural networks.
+- torchvision: Provides access to datasets, models, and image transformations for computer vision.
+- lightly: A computer vision framework for self-supervised learning.
 
-## Usage
-To use the script, simply instantiate a DatabaseFactory object with the path to the folder containing the images and annotations. 
+## Done Tasks
+### Annotation with Label-Studio:
+- Annotated 400 images with polygonal labels, along with JSON metadata for future reuse.
+### Image Cropping:
+- Developed Python code to crop images based on annotations.
+### Custom PyTorch Dataset:
+- Created a PyTorch dataset class for handling annotated data.
+### DINO Model with Lightly.ai:
+- Built a DINO model and studied SSL techniques, including SimCLR and BYOL.
+### Data Transformations:
+- Engineered a data transformation pipeline for the DINO model.
+### Pretraining Tasks:
+- Pretrained the model with a focus on learning rates and overfitting a single batch.
+### Training on Google Colab:
+- Trained the model for 180 epochs using Colab's GPU resources.
+### Initial Results with KNN:
+- Evaluated initial results using K-nearest neighbors on training dataset embeddings.
 
-## Example:
-python
-Copy code
-from database_factory import DatabaseFactory
-factory = DatabaseFactory("path/to/folder")
+## Future Tasks
+- Train the model for downstream tasks like detection or segmentation.
 
-The script will automatically parse the JSON annotation files and extract information about the image samples. It will then save the information to two CSV files: 
-samples_database.csv and original_images_database.csv.
+## Create Augmentations
+The augmentation strategy includes:
+### Camera Position:
+- Used `torchvision.transforms.RandomRotation`.
+### Random Cracks:
+- Considered but did not implement in the initial phase.
+### Old Photo Effect:
+- Applied `torchvision.transforms.ColorJitter` for color balance.
+### Random Deletes (Random Crops):
+- Implemented `torchvision.transforms.RandomResizedCrop` for simulating deletions.
+### Random Lighting:
+- Utilized `torchvision.transforms.ColorJitter` to adjust brightness levels.
+These augmentations aim to prepare the model to handle the unpredictable nature of archaeological inscriptions.
 
-## Functionality
-The DatabaseFactory class has the following methods:
+## How to Use
+Detailed in ArchaeologyLettersRecognition.ipynb notebook.
 
-__init__(self, data_path)
-The constructor method for the DatabaseFactory class. It takes a single argument, data_path, which is the path to the folder containing the images and annotations.
+## Contributors
+Special thanks to Dr. Barak Sober from The Hebrew University of Jerusalem's Department of Statistics and Data Science and Digital Humanities ([personal website](https://barakino.wixsite.com/academics)) and Prof. Yedid Hoshen from the School of Computer Science and Engineering at the same university ([personal website](https://www.cs.huji.ac.il/~yedid/)), for their invaluable guidance and support throughout this project.
 
-save_samples_data_to_csv(self)
-This method saves the sample data and original image data to two separate CSV files.
-
-parse_json_file(self, dirpath, filenames)
-This method is responsible for parsing the JSON annotation files and extracting information about the image samples. It takes two arguments: dirpath, which is the path to the folder containing the annotation file, and filenames, which is a list of filenames in the folder.
-
-parser_image_file(self, filenames)
-This method extracts information about the original image file. It takes a single argument, filenames, which is a list of filenames in the folder.
-
-fill_new_sample_info(self)
-This method fills in the information for a new image sample.
-
-parser_image_info(self, i)
-This method extracts information about the image sample, such as the coordinates of the polygon.
-
-annotate_image(self)
-This method is used to annotate the original image with the polygon.
-
-rectangle_crop_and_show(self)
-This method is used to crop the image to the bounds of the polygon and display the cropped image.
-
-get_polygon_crop(self)
-This method returns a cropped version of the image based on the coordinates of the polygon.
-
+## Acknowledgements
+Our project is heavily inspired by the work of Mathilde Caron et al. on Self-Supervised Vision Transformers (https://arxiv.org/abs/2104.14294).
+For more information on their work, please visit the DINO GitHub repository.
