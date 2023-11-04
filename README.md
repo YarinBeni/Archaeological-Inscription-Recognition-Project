@@ -34,6 +34,7 @@ To run this notebook, you'll need to install several libraries. You can install 
 - Train the model for downstream tasks like detection or segmentation.
 
 ## Augmentation Strategies
+When we pick changes to make to our images, we think about the special problems with old writings. Things like the camera's angle, scratches, how old a photo looks, parts that are missing, and different kinds of light can all affect the pictures. So, we've chosen some special tweaks for our images to help us deal with these issues:
 - **Camera Position Adjustments**: Implemented `torchvision.transforms.RandomRotation` for simulating changes in camera angle through rotation.
 - **Crack Simulation**: Explored options for creating cracks but deferred implementing a custom transformation for future work.
 - **Vintage Photo Transformation**: Applied `torchvision.transforms.ColorJitter` to adjust color balance for an "aged" photo effect.
