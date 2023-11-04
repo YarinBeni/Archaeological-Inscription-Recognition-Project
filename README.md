@@ -21,22 +21,14 @@ To run this notebook, you'll need to install several libraries. You can install 
 - lightly: A computer vision framework for self-supervised learning.
 
 ## Done Tasks
-### Annotation with Label-Studio:
-- Annotated 400 images with polygonal labels, along with JSON metadata for future reuse.
-### Image Cropping:
-- Developed Python code to crop images based on annotations.
-### Custom PyTorch Dataset:
-- Created a PyTorch dataset class for handling annotated data.
-### DINO Model with Lightly.ai:
-- Built a DINO model and studied SSL techniques, including SimCLR and BYOL.
-### Data Transformations:
-- Engineered a data transformation pipeline for the DINO model.
-### Pretraining Tasks:
-- Pretrained the model with a focus on learning rates and overfitting a single batch.
-### Training on Google Colab:
-- Trained the model for 180 epochs using Colab's GPU resources.
-### Initial Results with KNN:
-- Evaluated initial results using K-nearest neighbors on training dataset embeddings.
+- Annotation with Label-Studio: Annotated 400 images with polygonal labels, along with JSON metadata for future reuse.
+- Image Cropping: Developed Python code to crop images based on annotations.
+- Custom PyTorch Dataset: Created a PyTorch dataset class for handling annotated data.
+- DINO Model with Lightly.ai: Built a DINO model and studied SSL techniques, including SimCLR and BYOL.
+- Data Transformations: Engineered a data transformation pipeline for the DINO model.
+- Pretraining Tasks: Pretrained the model with a focus on learning rates and overfitting a single batch.
+- Training on Google Colab: Trained the model for 180 epochs using Colab's GPU resources.
+- Initial Results with KNN: Evaluated initial results using K-nearest neighbors on training dataset embeddings.
 
 ## Future Tasks
 - Train the model for downstream tasks like detection or segmentation.
