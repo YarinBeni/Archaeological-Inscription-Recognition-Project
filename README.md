@@ -8,7 +8,7 @@ We're trying to solve this by focusing on recognizing individual letters on arti
 
 In this repository, you'll find a notebook that shows our early attempts to solve this complex issue. We hope it will motivate and help others who are working on similar problems.
 
-![plot](./Screenshot 2023-11-04 155040.png)
+![embedding_knn_plots](https://github.com/YarinBeni/Archaeological-Inscription-Recognition-Project/blob/main/embedding_knn_plots.png?raw=true)
 
 ## Liberis
 To run this notebook, you'll need to install several libraries. You can install these via pip or conda, depending on your setup. Here's a list of the required libraries:
