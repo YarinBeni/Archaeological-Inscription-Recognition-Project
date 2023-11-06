@@ -8,7 +8,10 @@ We're trying to solve this by focusing on recognizing individual letters on arti
 
 In this repository, you'll find a notebook that shows our early attempts to solve this complex issue. We hope it will motivate and help others who are working on similar problems.
 
-![embedding_knn_plots](https://github.com/YarinBeni/Archaeological-Inscription-Recognition-Project/blob/main/embedding_knn_plots.png?raw=true)
+<img src="https://github.com/YarinBeni/Archaeological-Inscription-Recognition-Project/blob/main/embedding_knn_plots.png?raw=true" width="750" height="350">
+
+*Figure: Visualization of training data embeddings obtained from the DINO model, with a K-Nearest Neighbors (KNN) algorithm applied to identify the five closest neighbors for each data point.*
+
 
 ## Liberis
 To run this notebook, you'll need to install several libraries. You can install these via pip or conda, depending on your setup. Here's a list of the required libraries:
