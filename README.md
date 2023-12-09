@@ -37,6 +37,7 @@ To run this notebook, you'll need to install several libraries. You can install 
 
 ## Future Tasks
 - Train the model for downstream tasks like detection or segmentation.
+-create an custom hierarchical loss. reference: https://isaac-flath.github.io/fastblog/neural%20networks/image%20classification/2020/07/21/HierarchicalLossFunction.html#Metrics
 
 ## Augmentation Strategies
 When we pick changes to make to our images, we think about the special problems with old writings. Things like the camera's angle, scratches, how old a photo looks, parts that are missing, and different kinds of light can all affect the pictures. So, we've chosen some special tweaks for our images to help us deal with these issues:
